@@ -11,21 +11,40 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var taskArray: [[String:String]] = []
+    var taskArray: [TaskModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let task1: [String:String] = ["task": "Study French", "subtask": "Verbs in past and current", "date": "02/01/2015"]
-        let task2: [String:String] = ["task": "Eat dinner", "subtask": "Burger and salade", "date": "02/01/2015"]
-        let task3: [String:String] = ["task": "Gym", "subtask": "Leg day", "date": "02/01/2015"]
+        
+        let date1 = Date.from(year: 2015, month: 02, day: 01)
+        let date2 = Date.from(year: 2015, month: 02, day: 02)
+        let date3 = Date.from(year: 2015, month: 02, day: 03)
+        
+        let task1 = TaskModel(task: "Study French", subtask: "Verbs in past and present", date: date1)
+        let task2 = TaskModel(task: "Eat Diner", subtask: "Burger and salade", date: date2)
+        let task3 = TaskModel(task: "Gym", subtask: "Leg day", date: date3)
         
         taskArray = [task1, task2, task3]
+        
+        self.tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showTaskDetail" {
+            let detailTaskVC: TaskDetailViewController = segue.destinationViewController as TaskDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let thisTask = taskArray[indexPath!.row]
+            detailTaskVC.detailTaskModel = thisTask
+        }
+        
     }
     
     // UITableViewDataSource
@@ -34,23 +53,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println(indexPath.row)
-        
-        var taskDic: [String:String] = taskArray[indexPath.row]
+        var thisTask = taskArray[indexPath.row]
         
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
-        cell.taskLabel.text = taskDic["task"]
-        cell.descriptionLabel.text = taskDic["subtask"]
-        cell.dateLabel.text = taskDic["date"]
+        cell.taskLabel.text = thisTask.task
+        cell.descriptionLabel.text = thisTask.subtask
+        cell.dateLabel.text = Date.toString(date: thisTask.date)
         return cell
     }
     
     // UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showTaskDetail", sender: self)
     }
-    
-    
-    
     
 }
 

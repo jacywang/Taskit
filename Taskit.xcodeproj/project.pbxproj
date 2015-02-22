@@ -14,6 +14,9 @@
 		9C9CCA011A92DC1800B5E5DF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C9CC9FF1A92DC1800B5E5DF /* LaunchScreen.xib */; };
 		9C9CCA0D1A92DC1800B5E5DF /* TaskitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CCA0C1A92DC1800B5E5DF /* TaskitTests.swift */; };
 		9C9CCA171A98D17700B5E5DF /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CCA161A98D17700B5E5DF /* TaskCell.swift */; };
+		9C9CCA191A98FE1E00B5E5DF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CCA181A98FE1E00B5E5DF /* TaskModel.swift */; };
+		9C9CCA1B1A991E3700B5E5DF /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CCA1A1A991E3700B5E5DF /* TaskDetailViewController.swift */; };
+		9C9CCA1D1A99775000B5E5DF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CCA1C1A99775000B5E5DF /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		9C9CCA0B1A92DC1800B5E5DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C9CCA0C1A92DC1800B5E5DF /* TaskitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskitTests.swift; sourceTree = "<group>"; };
 		9C9CCA161A98D17700B5E5DF /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		9C9CCA181A98FE1E00B5E5DF /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		9C9CCA1A1A991E3700B5E5DF /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		9C9CCA1C1A99775000B5E5DF /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +87,10 @@
 			children = (
 				9C9CC9F61A92DC1700B5E5DF /* AppDelegate.swift */,
 				9C9CC9F81A92DC1700B5E5DF /* ViewController.swift */,
+				9C9CCA1A1A991E3700B5E5DF /* TaskDetailViewController.swift */,
+				9C9CCA181A98FE1E00B5E5DF /* TaskModel.swift */,
 				9C9CCA161A98D17700B5E5DF /* TaskCell.swift */,
+				9C9CCA1C1A99775000B5E5DF /* Date.swift */,
 				9C9CC9FA1A92DC1700B5E5DF /* Main.storyboard */,
 				9C9CC9FD1A92DC1800B5E5DF /* Images.xcassets */,
 				9C9CC9FF1A92DC1800B5E5DF /* LaunchScreen.xib */,
@@ -216,8 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9CC9F91A92DC1700B5E5DF /* ViewController.swift in Sources */,
+				9C9CCA1D1A99775000B5E5DF /* Date.swift in Sources */,
 				9C9CCA171A98D17700B5E5DF /* TaskCell.swift in Sources */,
+				9C9CCA191A98FE1E00B5E5DF /* TaskModel.swift in Sources */,
 				9C9CC9F71A92DC1700B5E5DF /* AppDelegate.swift in Sources */,
+				9C9CCA1B1A991E3700B5E5DF /* TaskDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
